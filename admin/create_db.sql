@@ -155,6 +155,9 @@ CREATE TABLE visa_application (
   visa_start_date       DATE,
   visa_end_date         DATE,
   officer_id            VARCHAR(50),
+  student_id            VARCHAR(50),
+  FOREIGN KEY (student_id) REFERENCES student(student_id)
+    ON UPDATE CASCADE ON DELETE SET NULL,
   FOREIGN KEY (officer_id) REFERENCES visa_support_officer(officer_id)
     ON UPDATE CASCADE ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
