@@ -250,7 +250,7 @@ $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
 
             <div class="founder-section">
                 <div class="founder-avatar">
-                    <img src="path/to/founder-image.jpg" alt="Frank Kaung">
+                    <img src="static/FrankKaung.png" alt="Frank Kaung">
                 </div>
                 <div class="founder-name">Frank Kaung</div>
                 <div class="founder-title">Founder</div>
@@ -258,10 +258,10 @@ $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
 
             <div class="pictures-grid">
                 <div class="picture-box">
-                    <img src="path/to/picture-1.jpg" alt="Picture 1">
+                    <img src="static/classroom.jpg" alt="Picture 1">
                 </div>
                 <div class="picture-box">
-                    <img src="path/to/picture-2.jpg" alt="Picture 2">
+                    <img src="static/classroom2.jpg" alt="Picture 2">
                 </div>
             </div>
 
