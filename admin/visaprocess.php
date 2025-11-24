@@ -1,6 +1,39 @@
 <?php
 require_once 'auth.php';
+require_once 'db.php';
+
 $isLoggedIn = requireLogin();
+$role = strtolower($_SESSION['role']);
+
+
+if (!$isLoggedIn || $role != "visasupportofficer") {
+    header('Location: index.php');
+}
+
+$pdo = db();
+$sql = "
+SELECT
+    c.course_id,
+    c.course_name,
+    GROUP_CONCAT(b.batch_no ORDER BY b.batch_no) AS batch_list
+FROM course AS c
+LEFT JOIN batch AS b
+    ON c.course_id = b.course_id
+GROUP BY c.course_id, c.course_name
+;
+";
+
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($courses as &$course) {
+    // Convert "B001,B002,B003" → ["B001","B002","B003"]
+    $course['batch_array'] = $course['batch_list']
+        ? explode(',', $course['batch_list'])
+        : [];
+}
+unset($course);
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +46,7 @@ $isLoggedIn = requireLogin();
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1ERo0BZlK" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static/style.css">
 
     <style>
         .page-title {
@@ -141,14 +174,6 @@ $isLoggedIn = requireLogin();
     </style>
 </head>
 <body>
-    <?php
-        include "../connect.php";
-        if(isset($_POST["btnPinsert"])){
-            $name= $_POST["pname"];
-            $qstr= "insert into programme (pname) values ('$name')";
-            $con->query($qstr);
-        }
-    ?>
     <!-- Top Header -->
     <?php include 'header.php'; ?>
 
@@ -159,117 +184,38 @@ $isLoggedIn = requireLogin();
         <!-- Main Content Area -->
         <div class="col-lg-10 col-md-9 col-8">
             <!-- Dashboard Content -->
-            <div class="dashboard-content">
-                <h2 class="page-title">Visa Process</h2>
+        <div class="dashboard-content">
+            <h2 class="page-title">Visa Process</h2>
 
-                 <!-- Recent Activities Section -->
-                        <!-- English Language Course -->
-        <div class="course-dropdown">
-            <div class="course-header" onclick="toggleCourse('english-course')">
-                <h2 class="course-title">English Language Course</h2>
-                <span class="dropdown-icon" id="english-icon">▼</span>
-            </div>
-            <div class="course-content" id="english-course">
-                <div class="course-details">
-                    <div class="detail-item" onclick="openBatch('English', 'Batch-1')">
-                        <div class="detail-left">
-                            <div class="detail-label">Batch Number</div>
-                            <div class="detail-value">Batch-1</div>
-                        </div>
-                        <span class="detail-arrow">→</span>
+            <!-- Language Course -->
+            <?php foreach ($courses as $course): ?>
+                <div class="course-dropdown">
+                    <div class="course-header" onclick="toggleCourse('<?php echo $course['course_id']; ?>')">
+                        <h2><?= htmlspecialchars($course['course_name']); ?></h2>
+                        <span class="dropdown-icon" id="<?php echo $course['course_id'];?>-icon">▼</span>
                     </div>
-                    <div class="detail-item" onclick="openBatch('English', 'Batch-2')">
-                        <div class="detail-left">
-                            <div class="detail-label">Batch Number</div>
-                            <div class="detail-value">Batch-2</div>
+                    <div class="course-content" id="<?php echo $course['course_id']; ?>">
+                        <div class="course-details">
+                            <?php foreach ($course['batch_array'] as $batch): ?>
+                                <div class="detail-item" onclick="openBatch('<?php echo $course['course_name']?>', '<?php echo $batch?>')">
+                                    <div class="detail-left">
+                                        <div class="detail-label">Batch Number</div>
+                                        <div class="detail-value"><?php echo $batch ?></div>
+                                    </div>
+                                    <span class="detail-arrow">→</span>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
-                        <span class="detail-arrow">→</span>
-                    </div>
-                    <div class="detail-item" onclick="openBatch('English', 'Batch-3')">
-                        <div class="detail-left">
-                            <div class="detail-label">Batch Number</div>
-                            <div class="detail-value">Batch-3</div>
-                        </div>
-                        <span class="detail-arrow">→</span>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Japanese Language Course -->
-        <div class="course-dropdown">
-            <div class="course-header" onclick="toggleCourse('japanese-course')">
-                <h2 class="course-title">Japanese Language Course</h2>
-                <span class="dropdown-icon" id="japanese-icon">▼</span>
-            </div>
-            <div class="course-content" id="japanese-course">
-                <div class="course-details">
-                    <div class="detail-item" onclick="openBatch('Japanese', 'Batch-1')">
-                        <div class="detail-left">
-                            <div class="detail-label">Batch Number</div>
-                            <div class="detail-value">Batch-1</div>
-                        </div>
-                        <span class="detail-arrow">→</span>
-                    </div>
-                    <div class="detail-item" onclick="openBatch('Japanese', 'Batch-2')">
-                        <div class="detail-left">
-                            <div class="detail-label">Batch Number</div>
-                            <div class="detail-value">Batch-2</div>
-                        </div>
-                        <span class="detail-arrow">→</span>
-                    </div>
-                    <div class="detail-item" onclick="openBatch('Japanese', 'Batch-3')">
-                        <div class="detail-left">
-                            <div class="detail-label">Batch Number</div>
-                            <div class="detail-value">Batch-3</div>
-                        </div>
-                        <span class="detail-arrow">→</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Thai Language Course -->
-        <div class="course-dropdown">
-            <div class="course-header" onclick="toggleCourse('thai-course')">
-                <h2 class="course-title">Thai Language Course</h2>
-                <span class="dropdown-icon" id="thai-icon">▼</span>
-            </div>
-            <div class="course-content" id="thai-course">
-                <div class="course-details">
-                    <div class="detail-item" onclick="openBatch('Thai', 'Batch-1')">
-                        <div class="detail-left">
-                            <div class="detail-label">Batch Number</div>
-                            <div class="detail-value">Batch-1</div>
-                        </div>
-                        <span class="detail-arrow">→</span>
-                    </div>
-                    <div class="detail-item" onclick="openBatch('Thai', 'Batch-2')">
-                        <div class="detail-left">
-                            <div class="detail-label">Batch Number</div>
-                            <div class="detail-value">Batch-2</div>
-                        </div>
-                        <span class="detail-arrow">→</span>
-                    </div>
-                    <div class="detail-item" onclick="openBatch('Thai', 'Batch-3')">
-                        <div class="detail-left">
-                            <div class="detail-label">Batch Number</div>
-                            <div class="detail-value">Batch-3</div>
-                        </div>
-                        <span class="detail-arrow">→</span>
-                    </div>
-                </div>
-            </div>
-
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 
       <script>
-        function toggleCourse(courseId) {
-            const content = document.getElementById(courseId);
-            const iconId = courseId.replace('-course', '-icon');
-            const icon = document.getElementById(iconId);
+        function toggleCourse(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById(id + "-icon");
 
             // Toggle the current course
             content.classList.toggle('open');
@@ -281,10 +227,10 @@ $isLoggedIn = requireLogin();
             event.stopPropagation();
 
             // You can redirect to a batch detail page or show more information
-            alert(`Opening ${courseName} - ${batchName}`);
+            /* alert(`Opening ${courseName} - ${batchName}`); */
 
             // Example: Redirect to batch detail page
-            // window.location.href = `batch-detail.php?course=${courseName}&batch=${batchName}`;
+             window.location.href = `visastatus.php?course=${courseName}&batch=${batchName}`;
         }
     </script>
 </body>
