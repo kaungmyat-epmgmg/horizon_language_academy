@@ -16,15 +16,6 @@ $isLoggedIn = requireLogin();
     <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-    <?php
-        include "../connect.php";
-        if(isset($_POST["btnPinsert"])){
-            $name= $_POST["pname"];
-            $qstr= "insert into programme (pname) values ('$name')";
-            $con->query($qstr);
-        }
-    ?>
-
     <!-- Top Header -->
     <?php include 'header.php'; ?>
 
@@ -33,7 +24,7 @@ $isLoggedIn = requireLogin();
         <?php include 'sidebar.php'; ?>
 
         <!-- Main Content Area -->
-        <div class="col-lg-10 col-md-9 col-8">
+        <div class="col-lg-10 col-md-9 col-8 main-content">
             <!-- Dashboard Content -->
             <div class="dashboard-content">
                 <h2 class="page-title">Dashboard</h2>

@@ -5,9 +5,8 @@ require_once 'db.php';
 $isLoggedIn = requireLogin();
 $role = strtolower($_SESSION['role']);
 
-
-if (!$isLoggedIn || $role != "visasupportofficer") {
-    header('Location: index.php');
+if (!$isLoggedIn && ($role !== "visasupportofficer" || $role !== "admin")) {
+        header('Location: index.php');
 }
 
 $pdo = db();
@@ -48,130 +47,6 @@ unset($course);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="static/style.css">
 
-    <style>
-        .page-title {
-            font-size: 42px;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 40px;
-        }
-
-        .courses-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .course-dropdown {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            overflow: hidden;
-            transition: box-shadow 0.3s ease;
-        }
-
-        .course-dropdown:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .course-header {
-            padding: 30px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: white;
-            transition: background-color 0.2s;
-        }
-
-        .course-header:hover {
-            background-color: #f8f9fa;
-        }
-
-        .course-title {
-            font-size: 24px;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .dropdown-icon {
-            font-size: 20px;
-            color: #666;
-            transition: transform 0.3s ease;
-        }
-
-        .dropdown-icon.open {
-            transform: rotate(180deg);
-        }
-
-        .course-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease;
-            background-color: #f8f9fa;
-        }
-
-        .course-content.open {
-            max-height: 800px;
-        }
-
-        .course-details {
-            padding: 20px 30px;
-        }
-
-        .detail-item {
-            background-color: white;
-            padding: 20px 25px;
-            margin-bottom: 12px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s;
-            border: 2px solid transparent;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .detail-item:hover {
-            background-color: #e3f2fd;
-            border-color: #0066cc;
-            transform: translateX(5px);
-        }
-
-        .detail-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .detail-left {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .detail-label {
-            font-size: 14px;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .detail-value {
-            font-size: 20px;
-            color: #333;
-            font-weight: 600;
-        }
-
-        .detail-arrow {
-            font-size: 18px;
-            color: #0066cc;
-        }
-
-        .batch-divider {
-            height: 1px;
-            background-color: #dee2e6;
-            margin: 20px 30px;
-        }
-    </style>
 </head>
 <body>
     <!-- Top Header -->
@@ -182,7 +57,7 @@ unset($course);
         <?php include 'sidebar.php'; ?>
 
         <!-- Main Content Area -->
-        <div class="col-lg-10 col-md-9 col-8">
+        <div class="col-lg-10 col-md-9 col-8 main-content">
             <!-- Dashboard Content -->
         <div class="dashboard-content">
             <h2 class="page-title">Visa Process</h2>

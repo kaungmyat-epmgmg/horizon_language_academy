@@ -2,8 +2,9 @@
 session_start();
 require_once 'db.php';
 $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
+$role = strtolower($_SESSION['role']);
 
-if (!$isLoggedIn || strtolower($_SESSION['role']) != "visasupportofficer") {
+if (!$isLoggedIn && ($role !== "visasupportofficer" || $role !== "admin")) {
         header('Location: index.php');
 }
 
@@ -39,46 +40,8 @@ $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="static/style.css">
 
-    <style>
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin: 20px auto;
-        }
-        th, td {
-            border: 1px solid #333;
-            padding: 12px;
-            text-align: center;
-        }
-        th {
-            background-color: #e8e8e8;
-            font-weight: bold;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        .name-col {
-            text-align: left;
-            font-weight: 500;
-        }
-    </style>
 </head>
 <body>
-    <?php
-        include "../connect.php";
-        if(isset($_POST["btnPinsert"])){
-            $name= $_POST["pname"];
-            $qstr= "insert into programme (pname) values ('$name')";
-            $con->query($qstr);
-        }
-    ?>
-
     <!-- Top Header -->
     <?php include 'header.php'; ?>
 
@@ -87,7 +50,7 @@ $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php include 'sidebar.php'; ?>
 
         <!-- Main Content Area -->
-         <div class="col-lg-10 col-md-9 col-8">
+         <div class="col-lg-10 col-md-9 col-8 main-content">
             <h1><?php echo $course?> - <?php echo $batch ?></h1>
             <table>
                 <thead>

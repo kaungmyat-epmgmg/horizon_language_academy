@@ -24,7 +24,7 @@ $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
         <?php include 'sidebar.php'; ?>
 
         <!-- Main Content Area -->
-        <div class="col-lg-10 col-md-9 col-8">
+        <div class="col-lg-10 col-md-9 col-8 main-content">
             <!-- Welcome Banner Section -->
             <div class="welcome-banner">
                 <div class="row">
@@ -146,27 +146,5 @@ $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
             </div>
         </div>
     </div>
-
-    <script>
-        // Simple hover effects for sidebar items
-        document.addEventListener('DOMContentLoaded', function() {
-            const sidebarItems = document.querySelectorAll('.sidebar-item');
-
-            sidebarItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    // Remove active class from all items
-                    sidebarItems.forEach(i => i.classList.remove('active'));
-                    // Add active class to clicked item
-                    this.classList.add('active');
-                });
-            });
-
-            // Add wave animation
-            const waves = document.querySelectorAll('.wave-svg path');
-            waves.forEach((wave, index) => {
-                wave.style.animation = `wave 3s ease-in-out infinite ${index * 0.5}s`;
-            });
-        });
-    </script>
 </body>
 </html>
