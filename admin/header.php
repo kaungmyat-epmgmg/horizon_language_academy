@@ -13,8 +13,7 @@
                 </form>
             </div>
         <?php else: ?>
-            <div class="sidebar-item">
-                <i class="bi bi-file-earmark"></i>
+            <div class="header-icons">
                 <a href="login.php">Login</a>
             </div>
         <?php endif; ?>

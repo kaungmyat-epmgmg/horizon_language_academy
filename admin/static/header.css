@@ -1,0 +1,56 @@
+.top-header {
+    background-color: white;
+    border-bottom: 2px solid var(--border-gray);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1999;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-box {
+    width: 45px;
+    height: 45px;
+    background-color: var(--primary-red);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border: 2px solid #b91c1c;
+}
+
+.brand-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--dark-gray);
+}
+
+.header-icons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.icon-btn:hover {
+    background-color: #f0f0f0;
+}

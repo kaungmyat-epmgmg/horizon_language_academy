@@ -1,0 +1,238 @@
+.dashboard-content {
+    padding: 2rem;
+}
+
+.recent-activities {
+    margin-bottom: 2rem;
+}
+
+.recent-activities h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.info-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.info-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.info-card h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-placeholder {
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+    text-align: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.info-placeholder img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.info-placeholder p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.class-info {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+    margin-bottom: 2rem;
+}
+
+.class-info h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.class-placeholder {
+    min-height: 100px;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.class-placeholder p {
+    margin-bottom: 0.5rem;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.class-placeholder strong {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Calendar Section */
+.calendar-section {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.calendar-section h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.calendar {
+    width: 100%;
+}
+
+.calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.cal-nav-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #666;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.cal-nav-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.cal-month {
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar-table th {
+    padding: 0.75rem;
+    text-align: center;
+    font-weight: 600;
+    color: #666;
+    font-size: 0.9rem;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.calendar-table td {
+    padding: 0.75rem;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.95rem;
+    border: 1px solid #f0f0f0;
+    transition: background-color 0.3s;
+}
+
+.calendar-table td:hover {
+    background-color: #f8f9fa;
+}
+
+.calendar-table .today {
+    background-color: #dc3545;
+    color: white;
+    font-weight: 600;
+    border-radius: 50%;
+}
+
+.calendar-table .current-day {
+    background-color: #fff0f1;
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.calendar-table .other-month {
+    color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .activity-cards {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .info-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .nav-tabs {
+        overflow-x: auto;
+        padding: 0 1rem;
+    }
+
+    .dashboard-content {
+        padding: 1rem;
+    }
+
+    .activity-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .header-icons {
+        display: none;
+    }
+}

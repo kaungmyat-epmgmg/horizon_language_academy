@@ -1,0 +1,47 @@
+.topic-dropdown {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.topic-dropdown:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.topic-header {
+    padding: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    transition: background-color 0.2s;
+}
+
+.topic-header:hover {
+    background-color: #f8f9fa;
+}
+
+.topic-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+.topic-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    background-color: #f8f9fa;
+}
+
+.topic-content.open {
+    max-height: 800px;
+}
+
+.topic-details {
+    padding: 20px 30px;
+}

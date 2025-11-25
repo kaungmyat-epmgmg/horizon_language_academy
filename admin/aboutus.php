@@ -26,7 +26,7 @@ $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
 
         <!-- Main Content Area -->
         <div class="col-lg-10 col-md-9 col-8 main-content">
-            <div class="about-container main-content">
+            <div class="about-container">
             <h1>About Us</h1>
 
             <h2>Horizon Language Academy</h2>
