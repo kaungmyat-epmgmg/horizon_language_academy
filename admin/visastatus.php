@@ -15,11 +15,13 @@ $pdo = db();
 $sql = "
 SELECT
     s.student_id,
-    s.student_name,
-    s.student_email,
-    s.student_ph_no
+    u.user_name AS student_name,
+    u.user_email AS student_email,
+    u.user_ph_no AS student_ph_no
 FROM student AS s
-WHERE batch_id = '$batch'
+INNER JOIN users AS u
+    ON s.student_id = u.user_id
+WHERE s.batch_id = '$batch'
 ;
 ";
 

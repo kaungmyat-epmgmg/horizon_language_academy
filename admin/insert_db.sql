@@ -4,28 +4,36 @@
 
 -- Insert Users (base table for all roles)
 INSERT INTO users (user_id, user_name, user_email, user_ph_no, password, role) VALUES
-('U001', 'John Smith', 'john.smith@horizon.edu', '+66-123-4567', 'pass123', 'Admin'),
-('U004', 'Emily Wilson', 'emily.w@horizon.edu', '+66-456-7890', 'pass123', 'Teacher'),
-('U007', 'James Brown', 'james.b@horizon.edu', '+66-789-0123', 'pass123', 'VisaSupportOfficer'),
-('U010', 'Maria Garcia', 'maria.g@horizon.edu', '+66-012-3456', 'pass123', 'Student');
+('U001', 'John Smith', 'admin1@email.com', '+66-123-4567', 'pass123', 'Admin'),
+('U002', 'Sarah Johnson', 'admin2@email.com', '+66-234-5678', 'pass123', 'Admin'),
+('U003', 'Michael Chen', 'admin3@email.com', '+66-345-6789', 'pass123', 'Admin'),
+('U004', 'Emily Wilson', 'teacher1@email.com', '+66-456-7890', 'pass123', 'Teacher'),
+('U005', 'David Lee', 'teacher2@email.com', '+66-567-8901', 'pass123', 'Teacher'),
+('U006', 'Anna Martinez', 'teacher3@email.com', '+66-678-9012', 'pass123', 'Teacher'),
+('U007', 'James Brown', 'visa1@email.com', '+66-789-0123', 'pass123', 'VisaSupportOfficer'),
+('U008', 'Lisa Wang', 'visa2@email.com', '+66-890-1234', 'pass123', 'VisaSupportOfficer'),
+('U009', 'Robert Taylor', 'visa3@email.com', '+66-901-2345', 'pass123', 'VisaSupportOfficer'),
+('U010', 'Maria Garcia', 'student1@email.com', '+66-012-3456', 'pass123', 'Student'),
+('U011', 'Thomas Anderson', 'student2@email.com', '+66-123-4568', 'pass123', 'Student'),
+('U012', 'Jennifer Kim', 'student3@email.com', '+66-234-5679', 'pass123', 'Student');
 
 -- Insert Admins
-INSERT INTO admin (admin_id, admin_name, admin_email, admin_ph_no) VALUES
-('U001', 'John Smith', 'john.smith@horizon.edu', '+66-123-4567'),
-('U002', 'Sarah Johnson', 'sarah.j@horizon.edu', '+66-234-5678'),
-('U003', 'Michael Chen', 'michael.chen@horizon.edu', '+66-345-6789');
+INSERT INTO admin (admin_id) VALUES
+('U001'),
+('U002'),
+('U003');
 
 -- Insert Teachers
-INSERT INTO teacher (teacher_id, teacher_name, teacher_email, teacher_ph_no, course_id) VALUES
-('U004', 'Emily Wilson', 'emily.w@horizon.edu', '+66-456-7890', 'C001'),
-('U005', 'David Lee', 'david.lee@horizon.edu', '+66-567-8901', 'C002'),
-('U006', 'Anna Martinez', 'anna.m@horizon.edu', '+66-678-9012', 'C003');
+INSERT INTO teacher (teacher_id, course_id) VALUES
+('U004', 'C001'),
+('U002', 'C002'),
+('U003', 'C003');
 
 -- Insert Visa Support Officers
-INSERT INTO visa_support_officer (officer_id, officer_name, officer_email, officer_ph_no) VALUES
-('U007', 'James Brown', 'james.b@horizon.edu', '+66-789-0123'),
-('U008', 'Lisa Wang', 'lisa.wang@horizon.edu', '+66-890-1234'),
-('U009', 'Robert Taylor', 'robert.t@horizon.edu', '+66-901-2345');
+INSERT INTO visa_support_officer (officer_id) VALUES
+('U007'),
+('U008'),
+('U009');
 
 -- Insert Topics
 INSERT INTO topic (topic_id, topic_name, course_id) VALUES
@@ -52,10 +60,10 @@ INSERT INTO batch (batch_no, start_date, end_date, course_id) VALUES
 ('B003', '2025-03-01', '2025-06-01', 'C003');
 
 -- Insert Students
-INSERT INTO student (student_id, student_name, student_email, student_ph_no, batch_id) VALUES
-('U010', 'Maria Garcia', 'maria.g@horizon.edu', '+66-012-3456', 'B001'),
-('U011', 'Thomas Anderson', 'thomas.a@horizon.edu', '+66-123-4568', 'B001'),
-('U012', 'Jennifer Kim', 'jennifer.k@horizon.edu', '+66-234-5679', 'B002');
+INSERT INTO student (student_id, batch_id) VALUES
+('U010', 'B001'),
+('U011', 'B001'),
+('U012', 'B002');
 
 -- Insert Lecture Notes
 INSERT INTO lecture_note (lecture_note_id, lecture_note_name, upload_date, class_id) VALUES

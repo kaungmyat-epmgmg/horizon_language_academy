@@ -40,18 +40,12 @@ CREATE TABLE users (
 -- ======================================
 CREATE TABLE admin (
   admin_id     VARCHAR(50) PRIMARY KEY,
-  admin_name   VARCHAR(100) NOT NULL,
-  admin_email  VARCHAR(100) UNIQUE,
-  admin_ph_no  VARCHAR(20),
   FOREIGN KEY (admin_id) REFERENCES users(user_id)
     ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE teacher (
   teacher_id    VARCHAR(50) PRIMARY KEY,
-  teacher_name  VARCHAR(100) NOT NULL,
-  teacher_email VARCHAR(100) UNIQUE,
-  teacher_ph_no VARCHAR(20),
   course_id     VARCHAR(50),
   FOREIGN KEY (teacher_id) REFERENCES users(user_id)
     ON UPDATE CASCADE ON DELETE CASCADE,
@@ -61,9 +55,6 @@ CREATE TABLE teacher (
 
 CREATE TABLE student (
   student_id    VARCHAR(50) PRIMARY KEY,
-  student_name  VARCHAR(100) NOT NULL,
-  student_email VARCHAR(100) UNIQUE,
-  student_ph_no VARCHAR(20),
   batch_id      VARCHAR(50),
   FOREIGN KEY (student_id) REFERENCES users(user_id)
     ON UPDATE CASCADE ON DELETE CASCADE
@@ -71,9 +62,6 @@ CREATE TABLE student (
 
 CREATE TABLE visa_support_officer (
   officer_id    VARCHAR(50) PRIMARY KEY,
-  officer_name  VARCHAR(100) NOT NULL,
-  officer_email VARCHAR(100) UNIQUE,
-  officer_ph_no VARCHAR(20),
   FOREIGN KEY (officer_id) REFERENCES users(user_id)
     ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

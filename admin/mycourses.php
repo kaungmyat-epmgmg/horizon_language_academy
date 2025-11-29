@@ -24,7 +24,7 @@ if ($role === "student") {
         c.course_id,
         c.course_name,
         t.teacher_id,
-        t.teacher_name,
+        u.user_name AS teacher_name,
         b.batch_no
     FROM student AS s
     INNER JOIN batch AS b
@@ -33,6 +33,8 @@ if ($role === "student") {
         ON b.course_id = c.course_id
     INNER JOIN teacher AS t
         ON c.course_id = t.course_id
+    INNER JOIN users AS u
+        ON t.teacher_id = u.user_id
     WHERE s.student_id = '$user_id';
     ";
 }
@@ -42,7 +44,7 @@ else if ($role === "admin") {
         c.course_id,
         c.course_name,
         t.teacher_id,
-        t.teacher_name
+        u.user_name AS teacher_name
     FROM admin AS a
     INNER JOIN admin_course AS ac
         ON a.admin_id = ac.admin_id
@@ -50,6 +52,8 @@ else if ($role === "admin") {
         ON ac.course_id = c.course_id
     INNER JOIN teacher AS t
         ON c.course_id = t.course_id
+    INNER JOIN users AS u
+        ON t.teacher_id = u.user_id
     WHERE a.admin_id = '$user_id';
     ";
 }
