@@ -55,9 +55,10 @@ INSERT INTO course (course_id, course_name, course_fees) VALUES
 
 -- Insert Batches
 INSERT INTO batch (batch_id, batch_no, start_date, end_date, course_id) VALUES
-('B001', '1', '2025-01-15', '2025-04-15', 'C001'),
-('B002', '1', '2025-02-01', '2025-05-01', 'C002'),
-('B003', '1', '2025-03-01', '2025-06-01', 'C003');
+('B001', '1', '2025-10-01', '2026-10-01', 'C001'),
+('B002', '1', '2025-10-01', '2026-10-01', 'C002'),
+('B003', '1', '2025-10-01', '2026-10-01', 'C003'),
+('B004', '2', '2025-12-01', '2026-12-01', 'C002');
 
 -- Insert Students
 INSERT INTO student (student_id, batch_id) VALUES

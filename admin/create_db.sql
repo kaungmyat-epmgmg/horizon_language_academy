@@ -20,6 +20,7 @@ DROP TABLE IF EXISTS teacher;
 DROP TABLE IF EXISTS admin;
 DROP TABLE IF EXISTS visa_support_officer;
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS enrollment;
 
 SET FOREIGN_KEY_CHECKS = 1;
 
@@ -206,4 +207,16 @@ CREATE TABLE activity_log (
   description  TEXT,
   FOREIGN KEY (user_id) REFERENCES users(user_id)
     ON UPDATE CASCADE ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE enrollment (
+  enrollment_id   INT AUTO_INCREMENT PRIMARY KEY,
+  student_name    VARCHAR(100) NOT NULL,
+  student_email   VARCHAR(150) NOT NULL,
+  student_ph_no   VARCHAR(20) NOT NULL,
+  batch_id        VARCHAR(50) NOT NULL,
+
+  FOREIGN KEY (batch_id) REFERENCES batch(batch_id)
+    ON UPDATE CASCADE
+    ON DELETE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

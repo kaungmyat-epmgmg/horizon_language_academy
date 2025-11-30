@@ -1,6 +1,27 @@
 <?php
+require_once 'db.php';
+
 session_start();
 $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
+
+$pdo = db();
+$sql = "
+SELECT
+    b.batch_id,
+    b.batch_no,
+    b.start_date,
+    b.course_id,
+    c.course_name
+FROM batch AS b
+INNER JOIN course AS c
+    ON b.course_id = c.course_id
+WHERE b.start_date > CURDATE()
+;
+";
+
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$upcoming_classes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -54,24 +75,16 @@ $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
             <div class="upcoming-classes-section">
                 <h2 class="section-heading">Upcoming Classes</h2>
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 mb-3">
-                        <div class="batch-card">
-                            <h5 class="batch-title">Eng</h5>
-                            <p class="batch-info">Batch-5</p>
+                    <?php foreach ($upcoming_classes as $c): ?>
+                        <div class="col-lg-4 col-md-6 mb-3">
+                            <a href="enroll_now.php?batch_id=<?php echo $c['batch_id']; ?>">
+                                <div class="batch-card">
+                                    <h5 class="batch-title"><?php echo $c['course_name'];?></h5>
+                                    <p class="batch-info">Batch-<?php echo $c['batch_no'];?></p>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-3">
-                        <div class="batch-card">
-                            <h5 class="batch-title">Thai</h5>
-                            <p class="batch-info">Batch-7</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-3">
-                        <div class="batch-card">
-                            <h5 class="batch-title">Japan</h5>
-                            <p class="batch-info">Batch-2</p>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
 
