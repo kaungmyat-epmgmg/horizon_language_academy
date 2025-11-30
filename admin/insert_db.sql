@@ -48,16 +48,16 @@ INSERT INTO topic (topic_id, topic_name, course_id) VALUES
 ('T009', 'Japanese Reading and Writing', 'C003');
 
 -- Insert Courses
-INSERT INTO course (course_id, course_name, course_date, course_fees) VALUES
-('C001', 'Thai Language Proficiency', '2025-01-15', 32000.00),
-('C002', 'English Language Proficiency', '2025-02-01', 35000.00),
-('C003', 'Japanese Language Proficiency', '2025-03-01', 38000.00);
+INSERT INTO course (course_id, course_name, course_fees) VALUES
+('C001', 'Thai Language Proficiency', 32000.00),
+('C002', 'English Language Proficiency', 35000.00),
+('C003', 'Japanese Language Proficiency', 38000.00);
 
 -- Insert Batches
-INSERT INTO batch (batch_no, start_date, end_date, course_id) VALUES
-('B001', '2025-01-15', '2025-04-15', 'C001'),
-('B002', '2025-02-01', '2025-05-01', 'C002'),
-('B003', '2025-03-01', '2025-06-01', 'C003');
+INSERT INTO batch (batch_id, batch_no, start_date, end_date, course_id) VALUES
+('B001', '1', '2025-01-15', '2025-04-15', 'C001'),
+('B002', '1', '2025-02-01', '2025-05-01', 'C002'),
+('B003', '1', '2025-03-01', '2025-06-01', 'C003');
 
 -- Insert Students
 INSERT INTO student (student_id, batch_id) VALUES

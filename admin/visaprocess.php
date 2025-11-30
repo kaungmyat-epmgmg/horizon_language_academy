@@ -14,7 +14,7 @@ $sql = "
 SELECT
     c.course_id,
     c.course_name,
-    GROUP_CONCAT(b.batch_no ORDER BY b.batch_no) AS batch_list
+    GROUP_CONCAT(b.batch_id ORDER BY b.batch_id) AS batch_list
 FROM course AS c
 LEFT JOIN batch AS b
     ON c.course_id = b.course_id

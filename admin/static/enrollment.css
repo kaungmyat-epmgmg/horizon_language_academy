@@ -1,0 +1,69 @@
+/* ===== Welcome Banner ===== */
+.welcome-banner {
+    background: #e60023;
+    color: #fff;
+    padding: 18px 20px;
+    border-radius: 14px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.welcome-banner .program-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.welcome-banner .program-details {
+    margin: 5px 0 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* ===== Stylish Inputs ===== */
+.enroll-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    width: 100%;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #e5e5e5;
+    border-radius: 12px;
+    font-size: 1rem;
+    background: #fafafa;
+    transition: all 0.25s ease;
+}
+
+.input-group input:focus {
+    border-color: #e60023;
+    background: #fff;
+    box-shadow: 0px 0px 8px rgba(230, 0, 35, 0.25);
+    outline: none;
+}
+
+/* ===== Enroll Button ===== */
+.enroll-btn {
+    width: 100%;
+    padding: 14px;
+    background: #e60023;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.enroll-btn:hover {
+    background: #b8001b;
+    transform: translateY(-2px);
+}

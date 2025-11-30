@@ -29,9 +29,9 @@ WHERE s.batch_id = '$batch'
 ;
 ";
 
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
-$students = $stmt->fetchAll(PDO::FETCH_ASSOC);
+/* $stmt = $pdo->prepare($sql); */
+/* $stmt->execute(); */
+/* $students = $stmt->fetchAll(PDO::FETCH_ASSOC); */
 ?>
 
 <!DOCTYPE html>
@@ -56,32 +56,31 @@ $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php include 'sidebar.php'; ?>
 
         <!-- Main Content Area -->
-         <div class="col-lg-10 col-md-9 col-8 main-content">
-            <h1><?php echo $course?> - <?php echo $batch ?></h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Application Type</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($students as $student): ?>
-                        <tr>
-                            <td class="id-col"><?php echo $student['student_id'] ?></td>
-                            <td class="name-col"><?php echo $student['student_name'] ?></td>
-                            <td class="email-col"><?php echo $student['student_email'] ?></td>
-                            <td class="phone-col"><?php echo $student['student_ph_no'] ?></td>
-                            <td class="application-col"><?php echo $student['visa_application_type'] ?></td>
-                            <td class="status-col"><?php echo $student['visa_status'] ?></td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+        <div class="col-lg-10 col-md-9 col-8 main-content">
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+                <h2 class="program-title">Japanese Language Programme</h2>
+                <p class="program-details">
+                    Batch 12 • 25 Nov 2025 • 2:00 PM – 4:00 PM
+                </p>
+            </div>
+
+            <!-- Input Form -->
+            <form class="enroll-form">
+                <div class="input-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" placeholder="Phone Number" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+
+                <button class="enroll-btn">Enroll Now</button>
+            </form>
         </div>
     </div>
 </body>

@@ -70,7 +70,8 @@ CREATE TABLE visa_support_officer (
 -- BATCH & COURSE SYSTEM
 -- ======================================
 CREATE TABLE batch (
-  batch_no    VARCHAR(50) PRIMARY KEY,
+  batch_id    VARCHAR(50) PRIMARY KEY,
+  batch_no    VARCHAR(50),
   start_date  DATE,
   end_date    DATE,
   course_id   VARCHAR(50)
@@ -79,7 +80,6 @@ CREATE TABLE batch (
 CREATE TABLE course (
   course_id   VARCHAR(50) PRIMARY KEY,
   course_name VARCHAR(100) NOT NULL,
-  course_date DATE,
   course_fees DECIMAL(10,2)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -90,7 +90,7 @@ ALTER TABLE batch
 
 -- Add foreign key for student to batch
 ALTER TABLE student
-  ADD FOREIGN KEY (batch_id) REFERENCES batch(batch_no)
+  ADD FOREIGN KEY (batch_id) REFERENCES batch(batch_id)
     ON UPDATE CASCADE ON DELETE SET NULL;
 
 -- ======================================
