@@ -46,29 +46,7 @@ $upcoming_classes = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <!-- Main Content Area -->
         <div class="col-lg-10 col-md-9 col-8 main-content">
             <!-- Welcome Banner Section -->
-            <div class="welcome-banner">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <h1 class="welcome-title">Welcome to<br>Horizon Language Academy</h1>
-                        <div class="advertisement-area">
-                            <p class="ad-text">Advertisement Pictures...</p>
-                            <div class="wave-decoration">
-                                <svg viewBox="0 0 200 40" class="wave-svg">
-                                    <path d="M0,20 Q50,0 100,20 T200,20" stroke="white" stroke-width="2" fill="none" opacity="0.5"/>
-                                    <path d="M0,25 Q50,5 100,25 T200,25" stroke="white" stroke-width="1.5" fill="none" opacity="0.3"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 d-flex align-items-center justify-content-center">
-                        <div class="mountain-decoration">
-                            <svg viewBox="0 0 150 100" class="mountain-svg">
-                                <path d="M20,80 L50,30 L80,50 L120,20 L150,80 Z" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
-                                <path d="M10,85 L40,40 L70,60 L100,35 L140,85 Z" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
+            <div class="welcome-banner" style="background-image: url('static/HLA_Reception.png');">
             </div>
 
             <!-- Upcoming Classes Section -->
@@ -110,27 +88,27 @@ $upcoming_classes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="lecturers-grid">
                     <div class="lecturer-card">
                         <div class="lecturer-avatar">
-                            <i class="bi bi-person"></i>
+                            <img src="static/Thai_Teacher_1.jpg" alt="">
                         </div>
-                        <p class="lecturer-name">Lecturer 1</p>
+                        <p class="lecturer-name">Teacher Chatri</p>
                     </div>
                     <div class="lecturer-card">
                         <div class="lecturer-avatar">
-                            <i class="bi bi-person"></i>
+                            <img src="static/Thai_Teacher_2.jpg" alt="">
                         </div>
-                        <p class="lecturer-name">Lecturer 2</p>
+                        <p class="lecturer-name">Teacher Chaiya</p>
                     </div>
                     <div class="lecturer-card">
                         <div class="lecturer-avatar">
-                            <i class="bi bi-person"></i>
+                            <img src="static/English_Teacher.jpg" alt="">
                         </div>
-                        <p class="lecturer-name">Lecturer 3</p>
+                        <p class="lecturer-name">Teacher Daniel</p>
                     </div>
                     <div class="lecturer-card">
                         <div class="lecturer-avatar">
-                            <i class="bi bi-person"></i>
+                            <img src="static/Japanese_Teacher_2.jpg" alt="">
                         </div>
-                        <p class="lecturer-name">Lecturer 4</p>
+                        <p class="lecturer-name">Teacher Haru</p>
                     </div>
                 </div>
             </div>

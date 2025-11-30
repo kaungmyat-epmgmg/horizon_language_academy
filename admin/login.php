@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             Some courses may allow guest access
         </div>
 
-        <button type="button" class="guest-btn" onclick="window.location.href='guest.php'">
+        <button type="button" class="guest-btn" onclick="window.location.href='index.php'">
             Access as a guest
         </button>
     </div>

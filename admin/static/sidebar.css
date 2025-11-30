@@ -1,5 +1,6 @@
 .main-sidebar {
-    background-color: var(--light-gray);
+    /* background-color: var(--light-gray); */
+    background-color: var(--navy-blue);
     border-right: 2px solid var(--border-gray);
     position: fixed;
     left: 0;

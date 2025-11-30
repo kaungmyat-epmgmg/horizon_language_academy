@@ -1,5 +1,5 @@
 .top-header {
-    background-color: white;
+    background-color: var(--navy-blue);
     border-bottom: 2px solid var(--border-gray);
     padding: 1rem 2rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -7,7 +7,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1999;
+    z-index: 9999;
+    color: var(--light-orange);
 }
 
 .logo-section {
@@ -21,6 +22,7 @@
     height: 45px;
     background-color: var(--primary-red);
     border-radius: 8px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,10 +32,16 @@
     border: 2px solid #b91c1c;
 }
 
+.logo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .brand-title {
     font-size: 1.4rem;
     font-weight: 700;
-    color: var(--dark-gray);
+    font-family: "Trebuchet MS";
 }
 
 .header-icons {
@@ -45,6 +53,7 @@
     background: none;
     border: none;
     padding: 0.5rem;
+    color: var(--light-orange);
     font-size: 1.2rem;
     cursor: pointer;
     border-radius: 50%;

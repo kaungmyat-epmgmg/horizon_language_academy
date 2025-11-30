@@ -33,22 +33,40 @@ $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
 
             <h3>Mission Statement</h3>
             <div class="about-text">
-                <p>To provide high-quality, student-focused language education that builds confidence, 
+                <p>To provide high-quality, student-focused language education that builds confidence,
                     practical communication skills, and cross-cultural understanding for learners at all levels.</p>
             </div>
 
             <h3>Vision Statement</h3>
             <div class="about-text">
-                <p> To be a leading international language academy that empowers students to grow globally, connect across 
+                <p> To be a leading international language academy that empowers students to grow globally, connect across
                     cultures, and unlock new opportunities through transformative learning.</p>
             </div>
 
-            <div class="founder-section">
-                <div class="founder-avatar">
-                    <img src="static/FrankKaung.png" alt="Frank Kaung">
+            <div class="founders-row">
+                <div class="founder-section">
+                    <div class="founder-avatar">
+                        <img src="static/FrankKaung.png" alt="Frank Kaung">
+                    </div>
+                    <div class="founder-name">Frank Kaung</div>
+                    <div class="founder-title">Founder</div>
                 </div>
-                <div class="founder-name">Frank Kaung</div>
-                <div class="founder-title">Founder</div>
+
+                <div class="founder-section">
+                    <div class="founder-avatar">
+                        <img src="static/FrankKaung.png" alt="Founder 2">
+                    </div>
+                    <div class="founder-name">Founder 2</div>
+                    <div class="founder-title">Co-Founder</div>
+                </div>
+
+                <div class="founder-section">
+                    <div class="founder-avatar">
+                        <img src="static/FrankKaung.png" alt="Founder 3">
+                    </div>
+                    <div class="founder-name">Founder 3</div>
+                    <div class="founder-title">Co-Founder</div>
+                </div>
             </div>
 
             <div class="pictures-grid">
@@ -65,27 +83,29 @@ $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
             <div class="contact-grid">
                 <div class="contact-box">
                     <div class="contact-icon">
-                        <img src="path/to/facebook-icon.jpg" alt="Facebook">
+                        <img src="static/facebook_logo.jpg" alt="Facebook">
                     </div>
                     <div class="contact-label">Facebook</div>
                 </div>
                 <div class="contact-box">
                     <div class="contact-icon">
-                        <img src="path/to/line-icon.jpg" alt="Line">
+                        <img src="static/line_logo.png" alt="Line">
                     </div>
                     <div class="contact-label">Line</div>
                 </div>
-            </div>
-
-            <div class="social-grid">
-                <div class="social-box">
-                    <a href="https://wa.me/your-number">WhatsApp</a>
+                <div class="contact-box">
+                    <div class="contact-icon">
+                        <img src="static/whatsapp_logo.jpg" alt="WhatsApp">
+                    </div>
+                    <div class="contact-label">WhatsApp</div>
                 </div>
-                <div class="social-box">
-                    <a href="weixin://your-wechat-id">WeChat</a>
+                <div class="contact-box">
+                    <div class="contact-icon">
+                        <img src="static/wechat_logo.png" alt="WeChat">
+                    </div>
+                    <div class="contact-label">WeChat</div>
                 </div>
             </div>
-
             <div class="email-footer">
                 <span class="email-icon">✉️</span>
                 <a href="mailto:horizonlanguage@gmail.com">horizonlanguage@gmail.com</a>

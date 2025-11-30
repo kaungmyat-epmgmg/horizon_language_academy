@@ -51,24 +51,6 @@ $isLoggedIn = requireLogin();
                     </div>
                 </section>
 
-                <!-- Information Cards Row -->
-                <div class="info-row">
-                    <div class="info-card student-info">
-                        <h3>👤 Student Information</h3>
-                        <div class="info-placeholder">
-                            <img src="placeholder-student.jpg" alt="Student Info" onerror="this.style.display='none'">
-                            <p>Your profile details and academic progress</p>
-                        </div>
-                    </div>
-                    <div class="info-card teacher-info">
-                        <h3>👨‍🏫 Teacher Information</h3>
-                        <div class="info-placeholder">
-                            <img src="placeholder-teacher.jpg" alt="Teacher Info" onerror="this.style.display='none'">
-                            <p>Instructor contacts and office hours</p>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Class Information Section -->
                 <section class="class-info">
                     <h3>👥 Class Information</h3>
@@ -84,11 +66,11 @@ $isLoggedIn = requireLogin();
 
                 <!-- Calendar Section -->
                 <section class="calendar-section">
-                    <h3>📅 September 2025</h3>
+                    <h3>📅 December 2025</h3>
                     <div class="calendar">
                         <div class="calendar-nav">
                             <button class="cal-nav-btn">&lt;</button>
-                            <span class="cal-month">September 2025</span>
+                            <span class="cal-month">December 2025</span>
                             <button class="cal-nav-btn">&gt;</button>
                         </div>
                         <table class="calendar-table">
@@ -105,7 +87,7 @@ $isLoggedIn = requireLogin();
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="current-day">1</td>
+                                    <td class="today">1</td>
                                     <td>2</td>
                                     <td>3</td>
                                     <td>4</td>
@@ -123,7 +105,7 @@ $isLoggedIn = requireLogin();
                                     <td>14</td>
                                 </tr>
                                 <tr>
-                                    <td class="today">15</td>
+                                    <td>15</td>
                                     <td>16</td>
                                     <td>17</td>
                                     <td>18</td>

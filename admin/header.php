@@ -1,7 +1,9 @@
 <div class="top-header">
     <div class="d-flex justify-content-between align-items-center">
         <div class="logo-section">
-            <div class="logo-box">H</div>
+            <div class="logo-box">
+                <img src="static/logo.png" alt="Horzon Logo">
+            </div>
             <span class="brand-title">Horizon Language Academy</span>
         </div>
         <?php if ($_SESSION['logged_in']): ?>

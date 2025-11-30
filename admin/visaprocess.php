@@ -67,7 +67,7 @@ unset($course);
             <?php foreach ($courses as $course): ?>
                 <div class="course-dropdown">
                     <div class="course-header" onclick="toggleCourse('<?php echo $course['course_id']; ?>')">
-                        <h2><?= htmlspecialchars($course['course_name']); ?></h2>
+                        <h5><?= htmlspecialchars($course['course_name']); ?></h5>
                         <span class="dropdown-icon" id="<?php echo $course['course_id'];?>-icon">▼</span>
                     </div>
                     <div class="course-content" id="<?php echo $course['course_id']; ?>">

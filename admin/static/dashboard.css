@@ -8,7 +8,7 @@
 
 .recent-activities h3 {
     font-size: 1.2rem;
-    color: #333;
+    color: var(--light-orange);
     margin-bottom: 1rem;
     font-weight: 600;
 }
