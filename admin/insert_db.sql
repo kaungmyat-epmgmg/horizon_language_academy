@@ -84,13 +84,10 @@ INSERT INTO quiz (quiz_id, quiz_name, upload_date, class_id) VALUES
 ('Q003', 'Pronunciation Test', '2025-01-28', 'T002');
 
 -- Insert Visa Applications
-INSERT INTO visa_application (visa_application_id, visa_application_type, passport_number, applicant_name, visa_start_date, visa_end_date, officer_id, student_id) VALUES
-('VA001', 'Conversion', 'P123456789', 'Maria Garcia', '2025-01-01', '2026-01-01', 'U007', 'U010'),
-('VA002', 'Conversion', 'P987654321', 'Thomas Anderson', '2025-02-01', '2026-02-01', 'U008', 'U011'),
-('VA003', '1st Extension', 'P987654321', 'Thomas Anderson', '2025-02-01', '2026-02-01', 'U008', 'U011'),
-('VA004', 'Conversion', 'P456789123', 'Jennifer Kim', '2025-03-01', '2026-03-01', 'U009', 'U012'),
-('VA005', '1st Extension', 'P456789123', 'Jennifer Kim', '2025-03-01', '2026-03-01', 'U009', 'U012'),
-('VA006', '2nd Extension', 'P456789123', 'Jennifer Kim', '2025-03-01', '2026-03-01', 'U009', 'U012');
+INSERT INTO visa_application (visa_application_id, visa_application_type, passport_number, visa_start_date, visa_end_date, officer_id, student_id, visa_status) VALUES
+('VA001', 'Conversion', 'P123456789', '2025-01-01', '2026-01-01', 'U007', 'U010', 'Processing'),
+('VA002', '1st Extension', 'P987654321', '2025-02-01', '2026-02-01', 'U008', 'U011', 'Completed'),
+('VA006', '2nd Extension', 'P456789123', '2025-03-01', '2026-03-01', 'U009', 'U012', 'Processing');
 
 -- Insert Documents
 INSERT INTO document (document_id, document_type, received_date, visa_application_id) VALUES

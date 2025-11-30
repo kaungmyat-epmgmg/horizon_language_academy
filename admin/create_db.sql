@@ -139,11 +139,11 @@ CREATE TABLE visa_application (
   visa_application_id   VARCHAR(50) PRIMARY KEY,
   visa_application_type VARCHAR(100),
   passport_number       VARCHAR(50),
-  applicant_name        VARCHAR(100) NOT NULL,
   visa_start_date       DATE,
   visa_end_date         DATE,
   officer_id            VARCHAR(50),
   student_id            VARCHAR(50),
+  visa_status            VARCHAR(50),
   FOREIGN KEY (student_id) REFERENCES student(student_id)
     ON UPDATE CASCADE ON DELETE SET NULL,
   FOREIGN KEY (officer_id) REFERENCES visa_support_officer(officer_id)

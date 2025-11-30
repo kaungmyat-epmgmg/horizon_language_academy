@@ -45,7 +45,6 @@ $role = strtolower($_SESSION['role']);
         if (currentPage === "visastatus.php") {
             currentPage = "visaprocess.php";
         }
-        console.log(currentPage);
 
         sidebarItems.forEach(item => {
             item.classList.remove("active");

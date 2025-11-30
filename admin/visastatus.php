@@ -17,10 +17,14 @@ SELECT
     s.student_id,
     u.user_name AS student_name,
     u.user_email AS student_email,
-    u.user_ph_no AS student_ph_no
+    u.user_ph_no AS student_ph_no,
+    v.visa_application_type,
+    v.visa_status
 FROM student AS s
 INNER JOIN users AS u
     ON s.student_id = u.user_id
+INNER JOIN visa_application AS v
+    ON s.student_id = v.student_id
 WHERE s.batch_id = '$batch'
 ;
 ";
@@ -28,6 +32,8 @@ WHERE s.batch_id = '$batch'
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$arr = json_encode($students);
+echo "<script> console.log('$arr'); </script>";
 ?>
 
 <!DOCTYPE html>
@@ -61,8 +67,8 @@ $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone</th>
-                        <th>Conversion</th>
-                        <th>1<sup>st</sup> Extension</th>
+                        <th>Application Type</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -72,8 +78,8 @@ $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <td class="name-col"><?php echo $student['student_name'] ?></td>
                             <td class="email-col"><?php echo $student['student_email'] ?></td>
                             <td class="phone-col"><?php echo $student['student_ph_no'] ?></td>
-                            <td>Completed</td>
-                            <td>Completed</td>
+                            <td class="application-col"><?php echo $student['visa_application_type'] ?></td>
+                            <td class="status-col"><?php echo $student['visa_status'] ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
