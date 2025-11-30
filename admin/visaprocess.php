@@ -14,7 +14,7 @@ $sql = "
 SELECT
     c.course_id,
     c.course_name,
-    GROUP_CONCAT(b.batch_id ORDER BY b.batch_id) AS batch_list
+    GROUP_CONCAT(CONCAT(b.batch_id, ':', b.batch_no) ORDER BY b.batch_id) AS batches
 FROM course AS c
 LEFT JOIN batch AS b
     ON c.course_id = b.course_id
@@ -26,12 +26,13 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+
 foreach ($courses as &$course) {
-    // Convert "B001,B002,B003" → ["B001","B002","B003"]
-    $course['batch_array'] = $course['batch_list']
-        ? explode(',', $course['batch_list'])
+    $course['batch_array'] = $course['batches']
+        ? explode(',', $course['batches'])
         : [];
 }
+
 unset($course);
 ?>
 
@@ -72,10 +73,19 @@ unset($course);
                     <div class="course-content" id="<?php echo $course['course_id']; ?>">
                         <div class="course-details">
                             <?php foreach ($course['batch_array'] as $batch): ?>
-                                <div class="detail-item" onclick="openBatch('<?php echo $course['course_name']?>', '<?php echo $batch?>')">
+                                <div class="detail-item" onclick="openBatch('<?php echo $course['course_name']?>',
+                                            '<?php
+                                                list($batch_id, $batch_no) = explode(':', $batch);
+                                            echo $batch_id
+                                            ?>')">
                                     <div class="detail-left">
                                         <div class="detail-label">Batch Number</div>
-                                        <div class="detail-value"><?php echo $batch ?></div>
+                                        <div class="detail-value">
+                                            <?php
+                                                list($batch_id, $batch_no) = explode(':', $batch);
+                                                echo $batch_no;
+                                            ?>
+                                        </div>
                                     </div>
                                     <span class="detail-arrow">→</span>
                                 </div>

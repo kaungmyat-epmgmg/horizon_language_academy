@@ -160,15 +160,6 @@ CREATE TABLE document (
     ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE visa_status (
-  status_id           VARCHAR(50) PRIMARY KEY,
-  status              VARCHAR(50) NOT NULL,
-  status_date         DATE,
-  visa_application_id VARCHAR(50),
-  FOREIGN KEY (visa_application_id) REFERENCES visa_application(visa_application_id)
-    ON UPDATE CASCADE ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 -- ======================================
 -- MANY-TO-MANY RELATIONSHIP: Admin-Course
 -- ======================================

@@ -88,28 +88,6 @@ $upcoming_classes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </div>
             </div>
 
-            <!-- Online Suggestion Box -->
-            <div class="suggestion-box-section">
-                <div class="suggestion-box">
-                    <h3 class="suggestion-title">Online Suggestion Box</h3>
-                    <form action="index.php" method="post" class="suggestion-form">
-                        <div class="row align-items-center">
-                            <div class="col-md-3">
-                                <label for="pname" class="form-label">Programme Name</label>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" id="pname" name="pname" required class="form-control"
-                                       placeholder="Enter programme name">
-                            </div>
-                            <div class="col-md-3">
-                                <input type="submit" value="Insert Programme"
-                                       class="btn btn-primary w-100" name="btnPinsert">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
             <!-- Course Categories Section -->
             <div class="course-categories-section">
                 <h2 class="section-heading">Course Categories</h2>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if (isset($_SESSION['show_success_modal'])) {
     echo "<script>window.addEventListener('load', function() { showModal(); });</script>";
     unset($_SESSION['show_success_modal']); // remove it after showing
@@ -7,12 +8,6 @@ if (isset($_SESSION['show_success_modal'])) {
 
 require_once "debug.php";
 require_once 'db.php';
-
-$isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
-
-if (!$isLoggedIn) {
-        header('Location: index.php');
-}
 
 $batch_id = $_GET['batch_id'];
 
