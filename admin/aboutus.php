@@ -29,9 +29,18 @@ $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
             <div class="about-container">
             <h1>About Us</h1>
 
-            <h2>Horizon Language Academy</h2>
+            <h2>“Expanding Horizons Through Language.”</h2>
+
+            <h3>Mission Statement</h3>
             <div class="about-text">
-                <p>Welcome to Horizon Language Academy, where we are dedicated to helping students expand their linguistic horizons and cultural understanding. Our academy provides comprehensive language education tailored to meet the needs of learners at all levels.</p>
+                <p>To provide high-quality, student-focused language education that builds confidence, 
+                    practical communication skills, and cross-cultural understanding for learners at all levels.</p>
+            </div>
+
+            <h3>Vision Statement</h3>
+            <div class="about-text">
+                <p> To be a leading international language academy that empowers students to grow globally, connect across 
+                    cultures, and unlock new opportunities through transformative learning.</p>
             </div>
 
             <div class="founder-section">
