@@ -86,7 +86,7 @@ $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <!-- Main Content Area -->
         <div class="col-lg-10 col-md-9 col-8 main-content">
             <!-- Dashboard Content -->
-            <div class="dashboard-content">
+            <div class="dashboard-content about-container">
                 <h2 class="page-title">My Courses</h2>
 
                  <!-- Courses Section -->

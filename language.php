@@ -51,52 +51,52 @@ $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <!-- Main Content Area -->
         <div class="col-lg-10 col-md-9 col-8 main-content">
             <!-- Dashboard Content -->
-            <div class="dashboard-content">
-            <h2 class="page-title"><?php echo $topics[0]['course_name']?></h2>
+            <div class="dashboard-content about-container">
+                <h2 class="page-title"><?php echo $topics[0]['course_name']?></h2>
 
-                <!-- Topics  -->
-                <?php foreach ($topics as $topic): ?>
-                    <div class="topic-dropdown">
-                        <div class="topic-header" onclick="toggleTopic('<?php echo $topic['topic_id']; ?>')">
-                        <h2 class="topic-title"><?php echo $topic["topic_name"] ?></h2>
-                        <span class="dropdown-icon" id="<?php echo $topic['topic_id'];?>-icon">▼</span>
-                        </div>
-                        <div class="topic-content" id="<?php echo $topic['topic_id']; ?>">
-                            <div class="topic-details">
-                                <div class="detail-item">
-                                    <div class="detail-left">
-                                        <div class="detail-label">Lecture Video</div>
+                    <!-- Topics  -->
+                    <?php foreach ($topics as $topic): ?>
+                        <div class="topic-dropdown">
+                            <div class="topic-header" onclick="toggleTopic('<?php echo $topic['topic_id']; ?>')">
+                            <h2 class="topic-title"><?php echo $topic["topic_name"] ?></h2>
+                            <span class="dropdown-icon" id="<?php echo $topic['topic_id'];?>-icon">▼</span>
+                            </div>
+                            <div class="topic-content" id="<?php echo $topic['topic_id']; ?>">
+                                <div class="topic-details">
+                                    <div class="detail-item">
+                                        <div class="detail-left">
+                                            <div class="detail-label">Lecture Video</div>
+                                        </div>
+                                        <span class="detail-arrow">→</span>
                                     </div>
-                                    <span class="detail-arrow">→</span>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-left">
-                                        <div class="detail-label">Notes</div>
+                                    <div class="detail-item">
+                                        <div class="detail-left">
+                                            <div class="detail-label">Notes</div>
+                                        </div>
+                                        <span class="detail-arrow">→</span>
                                     </div>
-                                    <span class="detail-arrow">→</span>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-left">
-                                        <div class="detail-label">Quizzes</div>
+                                    <div class="detail-item">
+                                        <div class="detail-left">
+                                            <div class="detail-label">Quizzes</div>
+                                        </div>
+                                        <span class="detail-arrow">→</span>
                                     </div>
-                                    <span class="detail-arrow">→</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
         </div>
     </div>
 
-      <script>
-        function toggleTopic(id) {
-            const content = document.getElementById(id);
-            const icon = document.getElementById(id + "-icon");
+    <script>
+    function toggleTopic(id) {
+        const content = document.getElementById(id);
+        const icon = document.getElementById(id + "-icon");
 
-            // Toggle the current course
-            content.classList.toggle('open');
-            icon.classList.toggle('open');
-        }
+        // Toggle the current course
+        content.classList.toggle('open');
+        icon.classList.toggle('open');
+    }
     </script>
 </body>
 </html>

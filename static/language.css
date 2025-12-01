@@ -25,7 +25,7 @@
     background-color: #f8f9fa;
 }
 
-.topic-title {
+div.about-container h2.topic-title {
     font-size: 24px;
     font-weight: 600;
     color: #333;

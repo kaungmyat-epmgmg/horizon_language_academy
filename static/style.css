@@ -6,6 +6,7 @@
 @import url("language.css");
 @import url("popup.css");
 @import url("sidebar.css");
+@import url("visa_status.css");
 
 :root {
     --primary-red: #dc2626;

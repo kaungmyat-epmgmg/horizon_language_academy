@@ -45,70 +45,72 @@ $upcoming_classes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <!-- Main Content Area -->
         <div class="col-lg-10 col-md-9 col-8 main-content">
-            <!-- Welcome Banner Section -->
-            <div class="welcome-banner" style="background-image: url('static/HLA_Reception.png');">
-            </div>
-
-            <!-- Upcoming Classes Section -->
-            <div class="upcoming-classes-section">
-                <h2 class="section-heading">Upcoming Classes</h2>
-                <div class="row">
-                    <?php foreach ($upcoming_classes as $c): ?>
-                        <div class="col-lg-4 col-md-6 mb-3">
-                            <a href="enroll_now.php?batch_id=<?php echo $c['batch_id']; ?>">
-                                <div class="batch-card">
-                                    <h5 class="batch-title"><?php echo $c['course_name'];?></h5>
-                                    <p class="batch-info">Batch-<?php echo $c['batch_no'];?></p>
-                                </div>
-                            </a>
-                        </div>
-                    <?php endforeach; ?>
+            <div class="about-container">
+                <!-- Welcome Banner Section -->
+                <div class="welcome-banner" style="background-image: url('static/HLA_Reception.png');">
                 </div>
-            </div>
 
-            <!-- Course Categories Section -->
-            <div class="course-categories-section">
-                <h2 class="section-heading">Course Categories</h2>
-                <div class="categories-grid">
-                    <div class="category-item">
-                        <span class="category-text">English Language Proficiency</span>
-                    </div>
-                    <div class="category-item">
-                        <span class="category-text">Thai Language Proficiency</span>
-                    </div>
-                    <div class="category-item">
-                        <span class="category-text">Japanese Language Proficiency</span>
+                <!-- Upcoming Classes Section -->
+                <div class="upcoming-classes-section">
+                    <h2 class="section-heading">Upcoming Classes</h2>
+                    <div class="row">
+                        <?php foreach ($upcoming_classes as $c): ?>
+                            <div class="col-lg-4 col-md-6 mb-3">
+                                <a href="enroll_now.php?batch_id=<?php echo $c['batch_id']; ?>">
+                                    <div class="batch-card">
+                                        <h5 class="batch-title"><?php echo $c['course_name'];?></h5>
+                                        <p class="batch-info">Batch-<?php echo $c['batch_no'];?></p>
+                                    </div>
+                                </a>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
-            </div>
 
-            <!-- Lecturers Section -->
-            <div class="lecturers-section">
-                <h2 class="section-heading">Lecturers</h2>
-                <div class="lecturers-grid">
-                    <div class="lecturer-card">
-                        <div class="lecturer-avatar">
-                            <img src="static/Thai_Teacher_1.jpg" alt="">
+                <!-- Course Categories Section -->
+                <div class="course-categories-section">
+                    <h2 class="section-heading">Course Categories</h2>
+                    <div class="categories-grid">
+                        <div class="category-item">
+                            <span class="category-text">English Language Proficiency</span>
                         </div>
-                        <p class="lecturer-name">Teacher Chatri</p>
+                        <div class="category-item">
+                            <span class="category-text">Thai Language Proficiency</span>
+                        </div>
+                        <div class="category-item">
+                            <span class="category-text">Japanese Language Proficiency</span>
+                        </div>
                     </div>
-                    <div class="lecturer-card">
-                        <div class="lecturer-avatar">
-                            <img src="static/Thai_Teacher_2.jpg" alt="">
+                </div>
+
+                <!-- Lecturers Section -->
+                <div class="lecturers-section">
+                    <h2 class="section-heading">Lecturers</h2>
+                    <div class="lecturers-grid">
+                        <div class="lecturer-card">
+                            <div class="lecturer-avatar">
+                                <img src="static/Thai_Teacher_1.jpg" alt="">
+                            </div>
+                            <p class="lecturer-name">Teacher Chatri</p>
                         </div>
-                        <p class="lecturer-name">Teacher Chaiya</p>
-                    </div>
-                    <div class="lecturer-card">
-                        <div class="lecturer-avatar">
-                            <img src="static/English_Teacher.jpg" alt="">
+                        <div class="lecturer-card">
+                            <div class="lecturer-avatar">
+                                <img src="static/Thai_Teacher_2.jpg" alt="">
+                            </div>
+                            <p class="lecturer-name">Teacher Chaiya</p>
                         </div>
-                        <p class="lecturer-name">Teacher Daniel</p>
-                    </div>
-                    <div class="lecturer-card">
-                        <div class="lecturer-avatar">
-                            <img src="static/Japanese_Teacher_2.jpg" alt="">
+                        <div class="lecturer-card">
+                            <div class="lecturer-avatar">
+                                <img src="static/English_Teacher.jpg" alt="">
+                            </div>
+                            <p class="lecturer-name">Teacher Daniel</p>
                         </div>
-                        <p class="lecturer-name">Teacher Haru</p>
+                        <div class="lecturer-card">
+                            <div class="lecturer-avatar">
+                                <img src="static/Japanese_Teacher_2.jpg" alt="">
+                            </div>
+                            <p class="lecturer-name">Teacher Haru</p>
+                        </div>
                     </div>
                 </div>
             </div>

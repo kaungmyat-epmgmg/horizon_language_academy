@@ -48,42 +48,46 @@ $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="static/style.css">
 
 </head>
-<body>
-    <!-- Top Header -->
-    <?php include 'header.php'; ?>
+    <body>
+        <!-- Top Header -->
+        <?php include 'header.php'; ?>
 
-    <div class="row g-0">
-        <!-- Left Sidebar -->
-        <?php include 'sidebar.php'; ?>
+        <div class="row g-0">
+            <!-- Left Sidebar -->
+            <?php include 'sidebar.php'; ?>
 
-        <!-- Main Content Area -->
-         <div class="col-lg-10 col-md-9 col-8 main-content">
-            <h1><?php echo $course?> (Batch - <?php echo $batch_no ?>)</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Application Type</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($students as $student): ?>
-                        <tr>
-                            <td class="id-col"><?php echo $student['student_id'] ?></td>
-                            <td class="name-col"><?php echo $student['student_name'] ?></td>
-                            <td class="email-col"><?php echo $student['student_email'] ?></td>
-                            <td class="phone-col"><?php echo $student['student_ph_no'] ?></td>
-                            <td class="application-col"><?php echo $student['visa_application_type'] ?></td>
-                            <td class="status-col"><?php echo $student['visa_status'] ?></td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+            <!-- Main Content Area -->
+             <div class="col-lg-10 col-md-9 col-8 main-content">
+                <div class="about-container">
+                    <h1><?php echo $course?> (Batch - <?php echo $batch_no ?>)</h1>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Application Type</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($students as $student): ?>
+                                    <tr>
+                                        <td class="id-col"><?php echo $student['student_id'] ?></td>
+                                        <td class="name-col"><?php echo $student['student_name'] ?></td>
+                                        <td class="email-col"><?php echo $student['student_email'] ?></td>
+                                        <td class="phone-col"><?php echo $student['student_ph_no'] ?></td>
+                                        <td class="application-col"><?php echo $student['visa_application_type'] ?></td>
+                                        <td class="status-col"><?php echo $student['visa_status'] ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>

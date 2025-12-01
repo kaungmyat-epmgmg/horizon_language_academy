@@ -60,7 +60,7 @@ unset($course);
         <!-- Main Content Area -->
         <div class="col-lg-10 col-md-9 col-8 main-content">
             <!-- Dashboard Content -->
-        <div class="dashboard-content">
+        <div class="dashboard-content about-container">
             <h2 class="page-title">Visa Process</h2>
 
             <!-- Language Course -->
