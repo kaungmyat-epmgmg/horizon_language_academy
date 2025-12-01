@@ -52,20 +52,19 @@ $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
                         <div class="founder-name">Frank Kaung</div>
                         <div class="founder-title">Founder</div>
                     </div>
-
                     <div class="founder-section">
                         <div class="founder-avatar">
-                            <img src="static/FrankKaung.png" alt="Founder 2">
+                            <img src="static/Lumbert.png" alt="Founder 2">
                         </div>
-                        <div class="founder-name">Founder 2</div>
+                        <div class="founder-name">Alfredo Lumbert</div>
                         <div class="founder-title">Co-Founder</div>
                     </div>
 
                     <div class="founder-section">
                         <div class="founder-avatar">
-                            <img src="static/FrankKaung.png" alt="Founder 3">
+                            <img src="static/Luangchan.png" alt="Founder 3">
                         </div>
-                        <div class="founder-name">Founder 3</div>
+                        <div class="founder-name">Natthawat Luangchan</div>
                         <div class="founder-title">Co-Founder</div>
                     </div>
                 </div>

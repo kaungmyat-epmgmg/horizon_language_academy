@@ -98,7 +98,7 @@ $upcoming_classes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <div class="lecturer-avatar">
                                 <img src="static/Thai_Teacher_2.jpg" alt="">
                             </div>
-                            <p class="lecturer-name">Teacher Chaiya</p>
+                            <p class="lecturer-name">Teacher Emily</p>
                         </div>
                         <div class="lecturer-card">
                             <div class="lecturer-avatar">
@@ -110,7 +110,7 @@ $upcoming_classes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <div class="lecturer-avatar">
                                 <img src="static/Japanese_Teacher_2.jpg" alt="">
                             </div>
-                            <p class="lecturer-name">Teacher Haru</p>
+                            <p class="lecturer-name">Teacher Chen</p>
                         </div>
                     </div>
                 </div>
