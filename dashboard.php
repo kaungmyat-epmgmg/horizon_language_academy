@@ -15,128 +15,154 @@ $isLoggedIn = requireLogin();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="static/style.css">
 </head>
-<body>
-    <!-- Top Header -->
-    <?php include 'header.php'; ?>
+    <body>
+        <!-- Top Header -->
+        <?php include 'header.php'; ?>
 
-    <div class="row g-0">
-        <!-- Left Sidebar -->
-        <?php include 'sidebar.php'; ?>
+        <div class="row g-0">
+            <!-- Left Sidebar -->
+            <?php include 'sidebar.php'; ?>
 
-        <!-- Main Content Area -->
-        <div class="col-lg-10 col-md-9 col-8 main-content">
-            <!-- Dashboard Content -->
-            <div class="dashboard-content about-container">
-                <h2 class="page-title">Dashboard</h2>
+            <!-- Main Content Area -->
+            <div class="col-lg-10 col-md-9 col-8 main-content">
+                <!-- Dashboard Content -->
+                <div class="dashboard-content about-container">
+                    <h2 class="page-title">Dashboard</h2>
 
-                <!-- Recent Activities Section -->
-                <section class="recent-activities">
-                    <h3>Recent Activities</h3>
-                    <div class="activity-cards">
-                        <div class="activity-card">
-                            <h4>Eng Topic 2</h4>
-                            <p>Video Recording</p>
-                            <span class="card-icon">🎥</span>
+                    <!-- Recent Activities Section -->
+                    <section class="recent-activities">
+                        <h3>Recent Activities</h3>
+                        <div class="activity-cards">
+                            <div class="activity-card">
+                                <h4>Eng Topic 2</h4>
+                                <p>Video Recording</p>
+                                <span class="card-icon">🎥</span>
+                            </div>
+                            <div class="activity-card">
+                                <h4>Eng Topic 3 Notes</h4>
+                                <p>Study Materials</p>
+                                <span class="card-icon">📝</span>
+                            </div>
+                            <div class="activity-card">
+                                <h4>Eng Topic 3 Quiz</h4>
+                                <p>Assessment</p>
+                                <span class="card-icon">📋</span>
+                            </div>
                         </div>
-                        <div class="activity-card">
-                            <h4>Eng Topic 3 Notes</h4>
-                            <p>Study Materials</p>
-                            <span class="card-icon">📝</span>
-                        </div>
-                        <div class="activity-card">
-                            <h4>Eng Topic 3 Quiz</h4>
-                            <p>Assessment</p>
-                            <span class="card-icon">📋</span>
-                        </div>
-                    </div>
-                </section>
+                    </section>
 
-                <!-- Class Information Section -->
-                <section class="class-info">
-                    <h3>👥 Class Information</h3>
-                    <div class="class-content">
-                        <div class="class-placeholder">
-                            <img src="placeholder-class.jpg" alt="Class Info" onerror="this.style.display='none'">
-                            <p>Current enrollment: <strong>25 students</strong></p>
-                            <p>Next session: <strong>Monday, 10:00 AM</strong></p>
-                            <p>Room: <strong>Language Lab 3</strong></p>
+                    <!-- Class Information Section -->
+                    <section class="class-info">
+                        <h3>👥 Class Information</h3>
+                        <div class="class-content">
+                            <div class="class-placeholder">
+                                <img src="placeholder-class.jpg" alt="Class Info" onerror="this.style.display='none'">
+                                <p>Current enrollment: <strong>25 students</strong></p>
+                                <p>Next session: <strong>Monday, 10:00 AM</strong></p>
+                                <p>Room: <strong>Language Lab 3</strong></p>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-                <!-- Calendar Section -->
-                <section class="calendar-section">
-                    <h3>📅 December 2025</h3>
-                    <div class="calendar">
-                        <div class="calendar-nav">
-                            <button class="cal-nav-btn">&lt;</button>
-                            <span class="cal-month">December 2025</span>
-                            <button class="cal-nav-btn">&gt;</button>
+                    <!-- Calendar Section -->
+                    <section class="calendar-section">
+                        <h3 id="calendar-title">📅</h3>
+                        <div class="calendar">
+                            <div class="calendar-nav">
+                                <button class="cal-nav-btn" onclick="changeMonth(-1)">&lt;</button>
+                                <span class="cal-month" id="cal-month"></span>
+                                <button class="cal-nav-btn" onclick="changeMonth(1)">&gt;</button>
+                            </div>
+
+                            <table class="calendar-table">
+                                <thead>
+                                    <tr>
+                                        <th>Mon</th>
+                                        <th>Tue</th>
+                                        <th>Wed</th>
+                                        <th>Thu</th>
+                                        <th>Fri</th>
+                                        <th>Sat</th>
+                                        <th>Sun</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="calendar-body">
+                                    <!-- Filled by JavaScript -->
+                                </tbody>
+                            </table>
                         </div>
-                        <table class="calendar-table">
-                            <thead>
-                                <tr>
-                                    <th>Mon</th>
-                                    <th>Tue</th>
-                                    <th>Wed</th>
-                                    <th>Thu</th>
-                                    <th>Fri</th>
-                                    <th>Sat</th>
-                                    <th>Sun</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="today">1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>9</td>
-                                    <td>10</td>
-                                    <td>11</td>
-                                    <td>12</td>
-                                    <td>13</td>
-                                    <td>14</td>
-                                </tr>
-                                <tr>
-                                    <td>15</td>
-                                    <td>16</td>
-                                    <td>17</td>
-                                    <td>18</td>
-                                    <td>19</td>
-                                    <td>20</td>
-                                    <td>21</td>
-                                </tr>
-                                <tr>
-                                    <td>22</td>
-                                    <td>23</td>
-                                    <td>24</td>
-                                    <td>25</td>
-                                    <td>26</td>
-                                    <td>27</td>
-                                    <td>28</td>
-                                </tr>
-                                <tr>
-                                    <td>29</td>
-                                    <td>30</td>
-                                    <td class="other-month">1</td>
-                                    <td class="other-month">2</td>
-                                    <td class="other-month">3</td>
-                                    <td class="other-month">4</td>
-                                    <td class="other-month">5</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
+                    </section>
+                </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
+    <script>
+    let currentDate = new Date();
+
+    function renderCalendar() {
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth();
+
+        // Update titles
+        document.getElementById("cal-month").textContent =
+            currentDate.toLocaleString("en-US", { month: "long", year: "numeric" });
+
+        document.getElementById("calendar-title").textContent =
+            "📅 " + currentDate.toLocaleString("en-US", { month: "long", year: "numeric" });
+
+        const firstDay = new Date(year, month, 1).getDay(); // 0 = Sun
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        // Convert Sunday=0 → Make Monday index=0
+        const startingDay = (firstDay === 0 ? 6 : firstDay - 1);
+
+        const tbody = document.getElementById("calendar-body");
+        tbody.innerHTML = ""; // Clear previous calendar
+
+        let date = 1;
+        let row;
+
+        // Generate weeks
+        for (let i = 0; i < 6; i++) {
+            row = document.createElement("tr");
+
+            for (let j = 0; j < 7; j++) {
+                const cell = document.createElement("td");
+
+                if (i === 0 && j < startingDay) {
+                    cell.classList.add("other-month");
+                    cell.textContent = "";
+                } else if (date > daysInMonth) {
+                    cell.classList.add("other-month");
+                    cell.textContent = "";
+                } else {
+                    cell.textContent = date;
+
+                    // Highlight today
+                    const today = new Date();
+                    if (
+                        date === today.getDate() &&
+                        month === today.getMonth() &&
+                        year === today.getFullYear()
+                    ) {
+                        cell.classList.add("today");
+                    }
+
+                    date++;
+                }
+
+                row.appendChild(cell);
+            }
+
+            tbody.appendChild(row);
+        }
+    }
+
+    function changeMonth(direction) {
+        currentDate.setMonth(currentDate.getMonth() + direction);
+        renderCalendar();
+    }
+
+    renderCalendar();
+    </script>
 </html>
