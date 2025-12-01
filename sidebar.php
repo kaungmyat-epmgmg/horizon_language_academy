@@ -30,6 +30,13 @@ $role = strtolower($_SESSION['role']);
                 </div>
             <?php endif; ?>
 
+            <?php if ($isLoggedIn && $role === "admin"): ?>
+                <div class="sidebar-item" data-page="enroll_list.php">
+                    <i class="bi bi-book"></i>
+                    <a href="enroll_list.php">Enroll List</a>
+                </div>
+            <?php endif; ?>
+
             <div class="sidebar-item" data-page="aboutus.php">
                     <i class="bi bi-folder"></i>
                     <a href="aboutus.php">About Us</a>

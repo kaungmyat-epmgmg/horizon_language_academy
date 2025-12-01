@@ -1,21 +1,23 @@
 /* ===== Welcome Banner ===== */
-.welcome-banner {
-    background: #e60023;
+.enroll-banner {
     color: #fff;
     padding: 18px 20px;
     border-radius: 14px;
     text-align: center;
+    margin: 0 auto 20px;
     margin-bottom: 20px;
+    display: inline-block;
+    /* ⬅ This makes width match content */
 }
 
-.welcome-banner .program-title {
+.enroll-banner .program-title {
     margin: 0;
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 0.5px;
 }
 
-.welcome-banner .program-details {
+.enroll-banner .program-details {
     margin: 5px 0 0;
     font-size: 0.95rem;
     opacity: 0.9;

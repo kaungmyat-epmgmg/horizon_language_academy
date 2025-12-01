@@ -427,3 +427,15 @@ INSERT INTO activity_log (log_id, user_id, action_type, action_date, description
 ('AL001', 'U001', 'Login', '2025-01-15', 'Admin logged into system'),
 ('AL002', 'U010', 'Enrollment', '2025-01-15', 'Student enrolled in Basic Thai Language'),
 ('AL003', 'U004', 'Upload', '2025-01-16', 'Teacher uploaded lecture notes for Topic T001');
+
+-- Insert enrollment
+INSERT INTO enrollment (student_name, student_email, student_ph_no, batch_id) VALUES
+('Jake', 'jake@email.com', '123456789', 'B004'),
+('Emily Carter', 'emily.carter@email.com', '0987654321', 'B004'),
+('Liam Johnson', 'liam.johnson@email.com', '0912345678', 'B004'),
+('Sophia Nguyen', 'sophia.nguyen@email.com', '0845671234', 'B004'),
+('Daniel Smith', 'daniel.smith@email.com', '0832214455', 'B007'),
+('Ava Lee', 'ava.lee@email.com', '0819987766', 'B007'),
+('Noah Brown', 'noah.brown@email.com', '0893344556', 'B009'),
+('Mia Rodriguez', 'mia.rod@email.com', '0825567432', 'B009'),
+('Ethan Walker', 'ethan.walker@email.com', '0871239988', 'B009');

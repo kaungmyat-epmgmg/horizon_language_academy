@@ -6,7 +6,6 @@ if (isset($_SESSION['show_success_modal'])) {
     unset($_SESSION['show_success_modal']); // remove it after showing
 }
 
-require_once "debug.php";
 require_once 'db.php';
 
 $batch_id = $_GET['batch_id'];
@@ -82,30 +81,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <!-- Main Content Area -->
         <div class="col-lg-10 col-md-9 col-8 main-content">
-            <!-- Welcome Banner -->
-            <div class="welcome-banner">
-                <h2 class="program-title"><?php echo $course[0]['course_name'] ?></h2>
-                <p class="program-details">
-                    Batch <?php echo $course[0]['batch_no'] ?> • <?php echo $course[0]['start_date'] ?>
-                </p>
+            <div class="about-container">
+                <div class="enroll-banner">
+                    <h2 class="program-title"><?php echo $course[0]['course_name'] ?></h2>
+                    <p class="program-details">
+                        Batch <?php echo $course[0]['batch_no'] ?> • <?php echo $course[0]['start_date'] ?>
+                    </p>
+                </div>
+                <!-- Input Form -->
+                <form class="enroll-form" method="POST">
+                    <div class="input-group">
+                        <input type="text" name="fullName" placeholder="Full Name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" name="phoneNumber" placeholder="Phone Number" required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                    </div>
+
+                    <button type="submit" class="enroll-btn">Enroll Now</button>
+                </form>
             </div>
-
-            <!-- Input Form -->
-            <form class="enroll-form" method="POST">
-                <div class="input-group">
-                    <input type="text" name="fullName" placeholder="Full Name" required>
-                </div>
-
-                <div class="input-group">
-                    <input type="text" name="phoneNumber" placeholder="Phone Number" required>
-                </div>
-
-                <div class="input-group">
-                    <input type="email" name="email" placeholder="Email Address" required>
-                </div>
-
-                <button type="submit" class="enroll-btn">Enroll Now</button>
-            </form>
         </div>
     </div>
 
