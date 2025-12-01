@@ -1,6 +1,11 @@
 <?php
 require_once 'auth.php';
+require_once 'recent_pages.php';
 $isLoggedIn = requireLogin();
+
+$arr =json_encode($_SESSION['recent_pages']);
+
+echo "<script> console.log('$arr'); </script>";
 ?>
 
 <!DOCTYPE html>
@@ -33,21 +38,15 @@ $isLoggedIn = requireLogin();
                     <section class="recent-activities">
                         <h3>Recent Activities</h3>
                         <div class="activity-cards">
-                            <div class="activity-card">
-                                <h4>Eng Topic 2</h4>
-                                <p>Video Recording</p>
-                                <span class="card-icon">🎥</span>
-                            </div>
-                            <div class="activity-card">
-                                <h4>Eng Topic 3 Notes</h4>
-                                <p>Study Materials</p>
-                                <span class="card-icon">📝</span>
-                            </div>
-                            <div class="activity-card">
-                                <h4>Eng Topic 3 Quiz</h4>
-                                <p>Assessment</p>
-                                <span class="card-icon">📋</span>
-                            </div>
+                            <?php foreach (array_reverse($_SESSION['recent_pages']) as $page): ?>
+                                <div class="activity-card">
+                                    <a href="<?php echo $page; ?>">
+                                        <h4><?php echo ucfirst(str_replace('.php', '', $page)); ?></h4>
+                                        <p>Recently Visited</p>
+                                        <span class="card-icon">🕒</span>
+                                    </a>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
                     </section>
 

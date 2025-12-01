@@ -1,6 +1,7 @@
 <?php
 require_once 'auth.php';
 require_once 'db.php';
+require_once 'recent_pages.php';
 
 $isLoggedIn = requireLogin();
 $role = strtolower($_SESSION['role']);

@@ -3,6 +3,8 @@ require_once 'auth.php';
 require_once 'db.php';
 
 $isLoggedIn = requireLogin();
+
+require_once 'recent_pages.php';
 $role = strtolower($_SESSION['role']);
 
 if (!$isLoggedIn) {
