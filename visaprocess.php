@@ -77,7 +77,12 @@ unset($course);
                                             '<?php
                                                 list($batch_id, $batch_no) = explode(':', $batch);
                                             echo $batch_id
-                                            ?>')">
+                                            ?>',
+                                            '<?php
+                                                list($batch_id, $batch_no) = explode(':', $batch);
+                                            echo $batch_no
+                                            ?>',
+                                            )">
                                     <div class="detail-left">
                                         <div class="detail-label">Batch Number</div>
                                         <div class="detail-value">
@@ -107,7 +112,7 @@ unset($course);
             icon.classList.toggle('open');
         }
 
-         function openBatch(courseName, batchName) {
+         function openBatch(courseName, batchID, batchNo) {
             // Prevent event bubbling
             event.stopPropagation();
 
@@ -115,7 +120,7 @@ unset($course);
             /* alert(`Opening ${courseName} - ${batchName}`); */
 
             // Example: Redirect to batch detail page
-             window.location.href = `visastatus.php?course=${courseName}&batch=${batchName}`;
+             window.location.href = `visastatus.php?course=${courseName}&batchID=${batchID}&batchNo=${batchNo}`;
         }
     </script>
 </body>

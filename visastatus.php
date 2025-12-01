@@ -9,7 +9,8 @@ if (!$isLoggedIn && ($role !== "visasupportofficer" || $role !== "admin")) {
 }
 
 $course = $_GET['course'];
-$batch = $_GET['batch'];
+$batch_id = $_GET['batchID'];
+$batch_no = $_GET['batchNo'];
 
 $pdo = db();
 $sql = "
@@ -25,7 +26,7 @@ INNER JOIN users AS u
     ON s.student_id = u.user_id
 INNER JOIN visa_application AS v
     ON s.student_id = v.student_id
-WHERE s.batch_id = '$batch'
+WHERE s.batch_id = '$batch_id'
 ;
 ";
 
@@ -57,7 +58,7 @@ $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <!-- Main Content Area -->
          <div class="col-lg-10 col-md-9 col-8 main-content">
-            <h1><?php echo $course?> - <?php echo $batch ?></h1>
+            <h1><?php echo $course?> (Batch - <?php echo $batch_no ?>)</h1>
             <table>
                 <thead>
                     <tr>
